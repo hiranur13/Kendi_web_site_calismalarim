@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tasarim.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Porfolyom</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Hiranur</a>
+
+        <nav>
+            <a href="index.html">ANA SAYFA</a>
+            <a href="okulum.html">OKULUM</a>
+            <a href="yaptiklarim.html">YAPTIKLARIM</a>
+            <a href="iletisim.html" class="active">İLETİŞİM</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <img src="res/tel.png" alt="telefon">
+        </div>
+            <form>
+                <label for="ad">Adınız:</label>
+                <input type="text" id="ad" name="ad" required />
+                <label for="email">E-posta</label>
+                <input type="email" id="email" name="email" required />
+                <label>Cinsiyetiniz:</label>
+                <div class="gender-group">
+                    <input type="radio" name="gender" value="erkek" id="erkek" required />
+                    <label for="erkek">Erkek</label>
+                    <input type="radio" name="gender" value="kadin" id="kadin" />
+                    <label for="kadin">Kadın</label>
+                </div>
+                <label for="sikayet">Şikayetiniz:</label>
+                <textarea id="sikayet" name="sikayet" required></textarea>
+                <input type="submit" value="Gönder" />
+            </form>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="text">©2025 Tüm Haklar Saklıdır.</h5>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,398 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins%3Awght%40100%3B200%3B300%3B400%3B500%3B600&display=swap%27%29%3B);
+
+*{
+    margin: 0; /* Tüm elemanların dış boşluğunu sıfırlar. */
+    padding: 0; /* Tüm elemanların iç boşluğunu sıfırlar. */
+    box-sizing: border-box; /* Elemanların genişlik ve yükseklik hesaplamasında kenar boşluklarını ve kenarlıkları dahil eder. */
+    text-decoration: none; /* Tüm elemanların altını çizer. */
+    border: none; /* Tüm elemanların kenarlıklarını kaldırır. */
+    outline: none; /* Tüm elemanların dış hatlarını kaldırır. */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Varsayılan yazı tipini ayarlar. */
+}
+
+html{
+    font-size: 62.5%; /* Temel yazı boyutunu ayarlar (1rem = 10px). */
+}
+
+body{
+    width: 100%; /* Gövde genişliğini %100 yapar. */
+    height: 100vh; /* Gövde yüksekliğini görünüm yüksekliğine ayarlar. */
+    overflow-x: hidden; /* Yatay kaydırmayı gizler. */
+    background-color: #5A827E; /* Arka plan rengini siyah yapar. */
+    color: white; /* Yazı rengini beyaz yapar. */
+}
+
+header{
+    margin-top: 20px; /* Üstten 20 piksel boşluk bırakır. */
+    position: fixed; /* Başlığı sabitler, sayfa kaydırıldığında yerinde kalır. */
+    top: 0; /* Üstten sıfır piksel uzaklıkta konumlandırır. */
+    left: 0; /* Soldan sıfır piksel uzaklıkta konumlandırır. */
+    width: 100%; /* Genişliği %100 yapar. */
+    padding: 1rem 9%; /* İç boşluk ekler. */
+    background-color: transparent; /* Arka plan rengini şeffaf yapar. */
+    filter: drop-shadow(10px); /* Gölge efekti ekler. */
+    display: flex; /* Flexbox düzeni kullanır. */
+    justify-content: space-between; /* Elemanları yatayda aralar. */
+    align-items: center; /* Elemanları dikeyde ortalar. */
+    z-index: 100; /* Diğer elemanların üstünde görünmesini sağlar. */
+}
+
+.logo{
+    font-size: 3rem; /* Yazı boyutunu ayarlar. */
+    color: #5A827E; /* Yazı rengini kahverengi yapar. */
+    font-weight: 800; /* Yazı kalınlığını ayarlar. */
+    cursor: pointer; /* İmleci işaretçi yapar. */
+    transition: 0.5s ease; /* Geçiş efektini ayarlar. */
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Üzerine gelindiğinde boyutunu büyütür. */
+}
+
+nav a {
+    font-size: 1.8rem; /* Yazı boyutunu ayarlar. */
+    color: white; /* Yazı rengini beyaz yapar. */
+    margin-left: 4rem; /* Soldan 4 piksel boşluk bırakır. */
+    font-weight: 500; /* Yazı kalınlığını ayarlar. */
+    transition: 0.3s ease; /* Geçiş efektini ayarlar. */
+    border-bottom: 3px solid transparent; /* Alt kenarına şeffaf bir kenarlık ekler. */
+}
+
+nav a:hover,
+nav a.active{
+    color: #5A827E; /* Üzerine gelindiğinde veya aktif olduğunda yazı rengini kahverengi yapar. */
+    border-bottom: 3px solid #5A827E; /* Alt kenarına kahverengi bir kenarlık ekler. */
+}
+
+@media(max-width:995px){
+    nav{
+        position: absolute; /* Navigasyon menüsü konumlandırması mutlak olarak belirlenir. */
+        display: none; /* Varsayılan olarak gizlenir (ekran genişliği 995px altında). */
+        top: 0; /* Üst kenarı üst kısma hizalanır. */
+        right: 0; /* Sağ kenarı sağ tarafa hizalanır. */
+        width: 40%; /* Genişliği kapsayıcısının %40'ı olur. */
+        border-left: 3px solid #5A827E; /* Sol kenara 3px kalınlığında kahverengi çizgi ekler. */
+        border-bottom: 3px solid #5A827E; /* Alt kenara 3px kalınlığında kahverengi çizgi ekler. */
+        border-bottom-left-radius: 2rem; /* Sol alt köşeyi 2rem yumuşak köşe yapar. */
+        padding: 1rem solid; /* İç boşluk eklenir fakat 'solid' ifadesi hatalıdır, geçerli CSS değildir. */
+        background-color: #161616; /* Arka plan rengini koyu gri yapar. */
+        border-top: 0.1rem solid rgba(0, 0, 0, 0.1); /* Üst kenara ince saydam siyah çizgi ekler. */
+    }
+    
+    nav.active {
+        display: block; /* Aktif sınıfı eklenince menü görünür olur. */
+    }
+    nav a{
+        display: block; /* Menü elemanları blok olarak sıralanır. */
+        font-size: 2rem; /* Yazı boyutu artırılır. */
+        margin: 3rem 0; /* Dikeyde 3rem boşluk bırakılır. */
+    }
+    nav a:hover,nav a.active{
+        padding: 1rem; /* Yumuşak kenar ve dolgu eklenir. */
+    border-radius: 0.5rem; /* Köşeler yumuşatılır. */
+    border-bottom: 0.5rem solid #5A827E; /* Alt kenar kalınca kahverengi çizgi ile vurgulanır. */
+    }
+}
+
+section{
+    min-height: 100vh; /* Section yüksekliği görünüm yüksekliğinin tamamı kadar olur. */
+    padding: 5rem 9% 5rem; /* İç boşluklar üst, yan ve alt için ayarlanır. */
+}
+
+.home {
+    display: flex; /* İçerikler yatay esnek kutu olarak dizilir. */
+    justify-content: center; /* İçerikler yatayda ortalanır. */
+    align-items: center; /* İçerikler dikeyde ortalanır. */
+    gap: 8rem; /* Elemanlar arasında 8rem boşluk bırakılır. */
+    background-color: black; /* Arka plan siyah olur. */
+}
+
+.home .home-content{
+    font-size: 6rem; /* Yazı boyutu çok büyük yapılır. */
+    font-weight: 700; /* Yazı kalınlığı artırılır. */
+    line-height: 1.3; /* Satır yüksekliği ayarlanır. */
+}
+
+span {
+    color: #5A827E; /* Tüm span elementleri kahverengi renkte olur. */
+}
+
+.home-content p {
+    font-size: 2rem; /* Paragraf yazı boyutu ayarlanır. */
+    margin-top: 2.5rem; /* Üstten boşluk eklenir. */
+}
+
+.home-content h3 {
+    font-size: 4rem; /* Başlık yazı boyutu ayarlanır. */
+    margin-bottom: 1rem; /* Alttan boşluk eklenir. */
+    font-weight: 700; /* Yazı kalınlığı artırılır. */
+}
+
+.home-img img{
+    position: relative; /* İmajın konumu göreceli olur. */
+    width: 32vw; /* Görüntü genişliği görünüm genişliğinin %32'si olur. */
+    height: 32vw;
+    border-radius: 50%; /* Resim dairesel olur. */
+    box-shadow: 0 0 25px solid #5A827E; /* Kahverengi etrafında gölge efekti olur. */
+    cursor: pointer; /* İmleç el işaretine dönüşür. */
+    transition: 0.2s linear; /* Değişime geçiş süresi atanır. */
+}
+
+.home-img img:hover {
+    font-size: 1.8rem; /* TODO: Bu özellik resim için geçerli değildir, yazı için uygundur. */
+    font-weight: 500; /* TODO: Bu özellik resim için geçerli değildir, yazı için uygundur. */
+}
+
+.social-icons a {
+    display: inline-flex; /* Satır içi esnek kutu olur. */
+    justify-content: center; /* Yatayda ortalar. */
+    align-items: center; /* Dikeyde ortalar. Bu, ikonun yuvarlak kutunun tam ortasında görünmesini sağlar. */
+    width: 4rem; /* Genişlik belirlenir. */
+    height: 4rem; /* Yükseklik belirlenir. */
+    background-color: transparent; /* Şeffaf arka plan olur. */
+    border: 0.2rem solid #5A827E; /* Kahverengi kenarlık eklenir. */
+    font-size: 2rem; /* Yazı boyutu ayarlanır (ikon boyutu için). */
+    border-radius: 50%; /* Eleman yuvarlak olur. */
+    margin: 3rem 1.5rem 3rem; /* Dış boşluklar ayarlanır. */
+    transition: 0.3s ease; /* Geçiş animasyonu eklenir. */
+    color: #5A827E; /* Kahverengine yakın renk olur. */
+}
+
+.social-icons a:hover{
+    color: black; /* Üzerine gelince yazı/ikon rengi siyah olur. */
+    transform: scale(1.3) translateY(-5px); /* İkon büyür ve yukarı kayar. */
+    background-color: #5A827E; /* Arka plan kahverengi olur. */
+    box-shadow: 0 0 25px #5A827E; /* Kahverengi dış parıltı olur. */
+}
+
+.btn {
+    display: inline-block; /* Satır içi blok kutu olur. */
+    padding: 1rem 2.8rem; /* İç boşluklar belirlenir. */
+    background-color: black; /* Arka plan siyah olur. */
+    border-radius: 4rem; /* Kenarlar yuvarlatılır. */
+    font-size: 1.6rem; /* Yazı boyutu ayarlanır. */
+    color: #5A827E; /* Yazı rengi kahverengi olur. */
+    border: 2px solid #5A827E; /* Kahverengi kenarlık olur. */
+    transition: 0.3s ease; /* Geçiş animasyonu atanır. */
+    cursor: pointer; /* İmleç işaretçi olur. */
+}
+
+.btn:hover{
+    transform: scale3d(1.03); /* Buton hafif büyür. */
+    background-color: #5A827E; /* Arka plan kahverengi olur. */
+    color: #000; /* Yazı rengi siyah olur. */
+    box-shadow: 0 0 25px #5A827E; /* Kahverengi glow efekti eklenir. */
+}
+
+.typing-text {
+    font-size: 34px; /* Yazı boyutu ayarlanır. */
+    font-weight: 600; /* Yazı kalınlığı artar. */
+    min-width: 280px; /* Minimum genişlik belirlenir. */
+}
+
+.typing-text span{
+    position: relative; /* Konum göreceli olur (önceki ::before ve ::after için). */
+}
+
+.typing-text span::before {
+    content: "Yapay Zeka Ve Makina Öğrenmesi"; /* Başlangıç metni. */
+    color: #5A827E; /* Yazı kahverengi olur. */
+    animation: words 20s infinite; /* words animasyonu 20 saniyede tekrar eder. */
+}
+
+.typing-text span::after {
+    content: ""; /* Boş içerik. */
+    background-color: #000; /* Arka plan siyah. */
+    position: center; /* Bu özellik geçerli değildir, valid değil. */
+    width: calc(100% + 8px); /* Genişlik %100 + 8px. */
+    height: 50%; /* Yükseklik %50 olarak ayarlanır. */
+    border-left: 3px solid black; /* Sol kenarda 3px siyah çizgi. */
+    right: -8; /* Sağdan 8 (birim eksik) uzaklık, eksik px belirtilmeli. */
+    animation: cursor 0.6s infinite; /* cursor animasyonu sürekli. */
+}
+
+@keyframes cursor{
+    to{
+        border-left: 3px solid #5A827E; /* Animasyon sonunda sol border kahverengi olur. */
+    }
+}
+
+@keyframes words{
+    0%, 20%{
+        content: "Yapay Zeka Ve Makina Öğrenmesi"; /* İlk metin. */
+    }
+    21%, 40% {
+        content: "Mobil Uygulamalar"; /* İkinci metin. */
+    }
+    41%, 60% {
+        content: "Grafik Ve Canlandırma"; /* Üçüncü metin. */
+    }
+    61%, 80% {
+        content: "Web Tasarımı Ve Uygulama"; /* Dördüncü metin. */
+    }
+    0%, 20% {
+        content: "Mesleki Yabancı Dil (Bilişim)"; /* Bu kısım yanlış bir tekrardır, önceki 0%, 20% ile çakışıyor. */
+    }
+}
+
+@media(max-width: 1000px){
+    .home{
+        flex-direction: column; /* Elemanlar dikey sıraya geçer. */
+        margin: 5rem 4rem; /* Dış boşluklar ayarlanır. */
+    }
+
+    .home .home-content h3 {
+        font-size: 2.5rem; /* H3 yazı boyutu küçültülür. */
+    }
+
+    .home-content h1 {
+        font-size: 5rem; /* H1 yazı boyutu küçültülür. */
+    }
+
+    .home-img img {
+        width: 70vw; /* Resim genişliği %70 görünüm genişliği olur. */
+        margin-top: 4rem; /* Üstten boşluk bırakılır. */
+    }
+}
+
+/* Form genel stilleri */
+form {
+    width: 400px; /* Formun genişliği */
+    background-color: #5A827E; /* Arka plan rengi (koyu bordo tonunda) */
+    padding: 20px; /* İç boşluk */
+    border-radius: 8px; /* Köşeleri yuvarlatma */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+}
+
+/* Başlık (legend) stili */
+legend {
+    font-weight: bold; /* Kalın yazı tipi */
+    margin-bottom: 10px; /* Alt boşluk */
+}
+
+/* Etiketler için temel stil */
+label {
+    display: block; /* Her etiketi satırda tek başına göster */
+    margin-bottom: 5px; /* Etiket ile sonraki öğe arası boşluk */
+}
+
+/* Metin, e-posta, şifre, tarih giriş alanları ve metin kutusu stilleri */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+input[type="date"] {
+    width: calc(100% - 20px); /* Form genişliğine göre ayarlanmış giriş kutusu */
+    padding: 8px; /* İç boşluk */
+    margin-bottom: 10px; /* Alt boşluk */
+    box-sizing: border-box; /* Padding genişliği etkilemesin */
+    border: 1px solid #5A827E; /* Çerçeve rengi (hex kodu başında # eksikti, düzeltildi) */
+    border-radius: 4px; /* Hafif yuvarlatılmış köşeler */
+}
+
+/* Cinsiyet seçim grubu */
+.gender-group {
+    margin-bottom: 10px; /* Alt boşluk */
+}
+
+/* Cinsiyet etiketleri (radyo butonları yanında) */
+.gender-group label {
+    display: inline-block; /* Yan yana yerleştirme */
+    margin-left: 10px; /* Sol boşluk */
+}
+
+/* Radyo düğmeleri için stil */
+input[type="radio"] {
+    margin-left: 10px; /* Sol boşluk */
+    vertical-align: middle; /* Dikey hizalama */
+}
+
+/* Gönder butonu stili */
+input[type="submit"] {
+    padding: 10px 20px; /* Buton iç boşluğu */
+    border-radius: 5px; /* Yuvarlatılmış köşeler */
+    cursor: pointer; /* Üzerine gelindiğinde el simgesi */
+}
+
+.text{
+    text-align: center;/*yazıları ortalar*/
+    color: #3e5a57;/*yazı rengi*/
+    padding:1.5rem;/*alt iç boşluk*/
+    font-size: 1.5rem;
+}
+
+.yapilan-img img{
+    position: relative; /* İmajın konumu göreceli olur. */
+    width: 20vw; /* Görüntü genişliği görünüm genişliğinin %20'si olur. */
+    height: 20vw;/* Görüntü yüksekliğini görünüm yüksekliğinin %20'si olur. */
+    border-radius: 25%; /* Resim dairesel olur. */
+    box-shadow: 0 0 25px solid #5A827E; /* Kahverengi etrafında gölge efekti olur. */
+    cursor: pointer; /* İmleç el işaretine dönüşür. */
+    margin-left: 20px;/*sol dış boşluk*/
+}
+
+.alt-text {
+    font-size: 5rem; /* Alt yazı için yazı boyutu*/
+}
+
+.gallery {
+    display: flex;        /* Elemanları yatayda hizalar */
+    gap: 10px;            /* Görseller arasında 10px boşluk bırakır */
+    flex-wrap: wrap;      /* Taşan görselleri bir alt satıra geçirir */
+    justify-content: center; /* Tüm görselleri yatayda ortalar */
+}
+
+.gallery a img {
+    width: auto;          /* Genişlik orijinal boyutta kalır, bu bazen düzensiz görünüm yaratabilir */
+    height: 300px;;        /* Tüm görsellerin yüksekliği sabit 150px olur */
+    object-fit: cover;    /* Görselin taşan kısmı kırpılır, oranı korunur */
+    border-radius: 8px;   /* Kenarları hafif yuvarlatır */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+    transition: transform 0.3s ease; /* Hover animasyonunu yumuşak geçişle sağlar */
+}
+
+.gallery a img:hover {
+    transform: scale(1.05); /* Hover yapıldığında görsel %5 büyür */
+}
+
+
+
+.menu-toggle {
+    display: none;
+}
+
+.burger-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .burger-icon {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 25px;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 20px;
+        top: 60px;
+        background: white;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .menu-toggle:checked + .burger-icon + nav {
+        display: flex;
+    }
+}
