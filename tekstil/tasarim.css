@@ -1,0 +1,67 @@
+body{
+    background-color: #babbf4;
+}
+.kayan-text{
+    color: #6d3c87dd;
+    font-size: 20px;
+}
+#lang-menu{
+    border-right: #2f3072 solid #2f3072;
+    justify-content: end;
+    font-size:10px;
+}
+
+#lang-menu a,
+#social-menu a{
+    color: #2f3072;
+}
+
+#lang-menu a:hover{
+    color: #2f3072;
+    background-color:#2f30729c;
+}
+#social-menu a:hover{
+    color:#2f3072;
+}
+.card{
+    background-color: #ffffff6a;
+}
+.btn{
+    background-color: #babbf4;
+}
+.form-control{
+    background-color: #babbf4;
+}
+.owl-carousel .item {
+    width: 100%;
+    height: 200px; /* resimlerin yüksekliğini ayarla */
+}
+.owl-carousel .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* resimleri aynı boyut yap */
+}
+.dropdown-menu{
+    background-color: #2f30729c;
+}
+.yazi{
+    text-align: center;
+}
+/* style.css */
+.card-img-top {
+    height: 500px; /* İstediğiniz yüksekliği ayarlayın */
+}
+/* tasarim.css dosyanıza ekleyin veya <style> bloğunuzda kullanın */
+.sepet {
+    position: relative; /* İçindeki badge'in konumunu ayarlamak için */
+    display: inline-block; /* Genişliğini içeriğine göre ayarlar */
+    color: #000;
+}
+
+#cart-item-count {
+    position: absolute; /* .sepet öğesine göre konumlandırılır */
+    top: -5px; /* Yukarıdan biraz yukarı kaydırır */
+    right: -10px; /* Sağdan biraz dışarı kaydırır */
+    font-size: 0.75em; /* Yazı boyutunu küçültür */
+    padding: 0.25em 0.6em; /* İç boşluk ekler */
+}
