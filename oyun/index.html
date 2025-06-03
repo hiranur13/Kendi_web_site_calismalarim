@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Yılan Oyunu</title>
+  <style>
+    body {
+      margin: 0;
+      background: #314775a7;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+    }
+    canvas {
+      background: #222;
+      display: block;
+      margin: 20px auto;
+    }
+    footer {
+      background-color: #314775;
+      padding: 10px 0;
+    }
+    footer h3 {
+      color: white;
+      margin: 0;
+      font-size: 16px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <h1>🐍 Yılan Oyunu</h1>
+  <main>
+    <canvas id="game" width="400" height="400"></canvas>
+
+    <script>
+      const canvas = document.getElementById("game");
+      const ctx = canvas.getContext("2d");
+
+      const gridSize = 20;
+      const tileCount = canvas.width / gridSize;
+
+      let snake = [{ x: 10, y: 10 }];
+      let dx = 1;
+      let dy = 0;
+      let food = randomFood();
+      let score = 0;
+
+      function gameLoop() {
+        const head = { x: snake[0].x + dx, y: snake[0].y + dy };
+
+        if (
+          head.x < 0 || head.x >= tileCount ||
+          head.y < 0 || head.y >= tileCount ||
+          snake.some(segment => segment.x === head.x && segment.y === head.y)
+        ) {
+          alert("Oyun Bitti! Skor: " + score);
+          resetGame();
+          return;
+        }
+
+        snake.unshift(head);
+
+        if (head.x === food.x && head.y === food.y) {
+          score += 10;
+          food = randomFood();
+          document.title = `Skor: ${score}`;
+        } else {
+          snake.pop();
+        }
+
+        drawGame();
+      }
+
+      function drawGame() {
+        ctx.fillStyle = "#222";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "lime";
+        for (let part of snake) {
+          ctx.fillRect(part.x * gridSize, part.y * gridSize, gridSize - 1, gridSize - 1);
+        }
+
+        ctx.fillStyle = "red";
+        ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize - 1, gridSize - 1);
+      }
+
+      function randomFood() {
+        let pos;
+        do {
+          pos = {
+            x: Math.floor(Math.random() * tileCount),
+            y: Math.floor(Math.random() * tileCount)
+          };
+        } while (snake.some(s => s.x === pos.x && s.y === pos.y));
+        return pos;
+      }
+
+      function resetGame() {
+        snake = [{ x: 10, y: 10 }];
+        dx = 1;
+        dy = 0;
+        food = randomFood();
+        score = 0;
+        document.title = "Yılan Oyunu";
+      }
+
+      document.addEventListener("keydown", e => {
+        if (e.key === "ArrowUp" && dy === 0) {
+          dx = 0; dy = -1;
+        } else if (e.key === "ArrowDown" && dy === 0) {
+          dx = 0; dy = 1;
+        } else if (e.key === "ArrowLeft" && dx === 0) {
+          dx = -1; dy = 0;
+        } else if (e.key === "ArrowRight" && dx === 0) {
+          dx = 1; dy = 0;
+        }
+      });
+
+      setInterval(gameLoop, 150);
+    </script>
+  </main>
+
+  <footer>
+    <h3>BU OYUN CHATGPT YARDIMI İLE YAPILMIŞTIR YENİ SİTE YAPILDIĞI ZAMAN OYUNUMUZ KALKACAKTIR ANLAYIŞINIZ İÇİN TEŞEKKÜRLER</h3>
+  </footer>
+</body>
+</html>
