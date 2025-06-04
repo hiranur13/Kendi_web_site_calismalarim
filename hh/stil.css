@@ -1,0 +1,73 @@
+header{
+    background-color: #9c9c9c;
+}
+#top-menu a{
+    color: #ffffff;
+    display: block;
+    text-decoration: none;
+    padding: 25px 5px;
+}
+#top-menu a:hover{
+    background-color: #3b3b3b;
+    opacity: 50%;
+    transition: 1s;
+}
+#logo{
+    padding: 10px 0;
+    padding-bottom: 2px;
+}
+.mtr{
+    background-color: lightslategrey;  
+    margin: 10px;
+    padding: 10px;
+    color: #ffffff;
+}
+.mtr img,p{
+    width: 100%;
+    font-size:medium ;
+    text-align: center;
+}
+footer{
+    background-color: #9c9c9c;
+    text-align: start;
+    padding: 10px 0;
+}
+#soz{
+    border: #858585 5px solid;
+    background-color: #5d5d5d;
+    color: #ffffff;
+    font-size: 125%;
+}
+#sos{
+    text-align:end;
+}
+#telif{
+    text-align: center;
+    color: #ffffff;
+}
+#ara{
+    background-color: #9c9c9ca1;
+    border: none;
+    margin: 10px;
+    padding: 10px 0;
+}
+#ara:hover{
+    background-color: #3b3b3b9a;
+    opacity: 50%;
+    padding: 10px;
+    transition: 1s;
+}
+.hakkimizda{
+    font-size: 125%;
+    text-align: center;
+    font-family: monospace;
+}
+#tarih img{
+    margin:0 10px;
+    padding: 5px;
+    background-color: #9c9c9c;
+}
+#tarihce img{
+    margin: 0;
+    padding: 0;
+}
